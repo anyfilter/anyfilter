@@ -1,26 +1,27 @@
 # AnyFilter
 
-Chrome extension that hides posts you don't want to see. Works on X for now.
+Chrome extension that hides anything you don't want to see on X, from ads and spam to whatever you describe in a sentence.
 
-It hides ads, engagement bait, promos, platitudes, hate, porn bots, spam replies and crypto shilling, plus anything you describe in a sentence. Hidden posts collapse out of the feed. A side panel shows what was hidden and why, and lets you put anything back.
-
-Classification is done by [Jev](https://vercel.com/ai-gateway/models/jev). You need your own API key, from either Vercel AI Gateway or TypeSafe. Without a key only ads are hidden. A post costs about 600 input tokens, roughly $0.025 per 1,000 posts.
+https://github.com/user-attachments/assets/4cfa42c1-00e8-46d5-ba18-07cb912e9dbd
 
 ## Install
 
 1. Download `anyfilter-<version>-chrome.zip` from [Releases](../../releases) and unzip it.
 2. Open `chrome://extensions`, turn on Developer mode, click "Load unpacked" and pick the unzipped folder.
-3. Go to x.com, click the toolbar icon, open Settings in the panel and paste your key.
+3. Go to x.com and click the toolbar icon. The panel docks on the right.
 
 To build it yourself: `pnpm install && pnpm build`, then load `.output/chrome-mv3`.
 
-## Notes
+## Using it
 
-- Runs only on the home timeline and on conversation pages.
-- Your own posts and replies are never hidden.
-- On the home timeline, a post and the reply shown under it are hidden together.
-- Replies are scored together with the post they answer.
-- The threshold slider sets how sure Jev must be before a post is hidden.
+1. Open Settings in the panel and paste a [Jev](https://vercel.com/ai-gateway/models/jev) key from Vercel AI Gateway or TypeSafe. It never leaves your browser.
+2. Tick what to hide, or type your own rule like "horoscopes" and press Add.
+3. Scroll. Hidden posts show up in the panel grouped by reason; click "Put back in feed" if Jev got one wrong.
+
+<p>
+  <img src="screenshots/panel.png" width="360" alt="Side panel: stats and hidden posts grouped by reason">
+  <img src="screenshots/settings.png" width="360" alt="Settings, at the bottom of the same panel">
+</p>
 
 ## Development
 
