@@ -1,0 +1,8 @@
+allowBuilds:
+  core-js: true
+  esbuild: true
+  spawn-sync: true
+onlyBuiltDependencies:
+  - esbuild
+  - core-js
+  - spawn-sync

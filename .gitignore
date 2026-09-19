@@ -1,0 +1,14 @@
+node_modules/
+.output/
+.wxt/
+.playwright-cli/
+tmp/
+docs/
+reports/
+.env
+.env.*
+!.env.example
+.DS_Store
+__pycache__/
+public/icon/
+scripts/make-icons.py

@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0f1419;
+  --color-ink-2: #536471;
+  --color-line: #eff3f4;
+  --color-surface: #f7f9f9;
+  --color-hide: #f97316;
+  --color-keep: #00ba7c;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-ink);
+  background: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+.anyfilter-check {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  flex: none;
+  border: 1.5px solid #cfd9de;
+  border-radius: 5px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.anyfilter-check:checked {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+.anyfilter-check:checked::after {
+  content: "";
+  width: 4px;
+  height: 8px;
+  margin-top: -2px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.anyfilter-range {
+  appearance: none;
+  height: 16px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.anyfilter-range::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 2px;
+  background: #cfd9de;
+}
+
+.anyfilter-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -6.5px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: var(--color-ink);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.anyfilter-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.anyfilter-chevron {
+  transition: transform 0.2s;
+}
+
+.anyfilter-details[open] .anyfilter-chevron {
+  transform: rotate(90deg);
+}
+
+@keyframes anyfilter-slide {
+  from { transform: translateX(12px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+.anyfilter-slide {
+  animation: anyfilter-slide 0.3s ease-out;
+}
+
+@keyframes anyfilter-bump {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+.anyfilter-bump {
+  display: inline-block;
+  animation: anyfilter-bump 0.5s ease-out;
+  font-weight: 700;
+}
+
+@keyframes anyfilter-pop {
+  0% { transform: scale(0.4); opacity: 0; }
+  15% { transform: scale(1.2); opacity: 1; }
+  25% { transform: scale(1); }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.anyfilter-pop {
+  animation: anyfilter-pop 1.5s ease-out forwards;
+}
