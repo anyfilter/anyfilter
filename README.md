@@ -1,6 +1,6 @@
 # AnyFilter
 
-Chrome extension that hides anything you don't want to see on X, from ads and spam to whatever you describe in a sentence.
+Chrome extension that uses [Jev](https://typesafe.ai) to hide anything you don't want to see on any site, from ads and spam to whatever you describe in a sentence. X for now, more sites in the works.
 
 https://github.com/user-attachments/assets/4cfa42c1-00e8-46d5-ba18-07cb912e9dbd
 
@@ -14,7 +14,7 @@ To build it yourself: `pnpm install && pnpm build`, then load `.output/chrome-mv
 
 ## Using it
 
-1. Open Settings in the panel and paste a [Jev](https://vercel.com/ai-gateway/models/jev) key from Vercel AI Gateway or TypeSafe. It never leaves your browser.
+1. Open Settings in the panel and paste a Jev key from [Vercel AI Gateway](https://vercel.com/ai-gateway/models/jev) or [TypeSafe](https://console.typesafe.ai). It never leaves your browser.
 2. Tick what to hide, or type your own rule like "horoscopes" and press Add.
 3. Scroll. Hidden posts show up in the panel grouped by reason; click "Put back in feed" if Jev got one wrong.
 
