@@ -10,5 +10,4 @@ reports/
 !.env.example
 .DS_Store
 __pycache__/
-public/icon/
 scripts/make-icons.py
